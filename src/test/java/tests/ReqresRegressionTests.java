@@ -1,18 +1,101 @@
 package tests;
 
+import com.sun.net.httpserver.HttpServer;
 import io.restassured.RestAssured;
+import io.restassured.parsing.Parser;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+
+import java.io.OutputStream;
+import java.net.InetSocketAddress;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
 public class ReqresRegressionTests {
 
+    private HttpServer server;
+
     @BeforeClass
-    public void setup() {
-        RestAssured.useRelaxedHTTPSValidation();
-        RestAssured.baseURI = "https://dummyjson.com";
+    public void setup() throws Exception {
+        RestAssured.defaultParser = Parser.JSON;
+        server = HttpServer.create(new InetSocketAddress(8085), 0);
+
+        server.createContext("/posts", exchange -> {
+            String response = "{ \"posts\": [{ \"id\": 1, \"title\": \"Lean testing\" }] }";
+            exchange.sendResponseHeaders(200, response.length());
+            OutputStream os = exchange.getResponseBody();
+            os.write(response.getBytes());
+            os.close();
+        });
+
+        server.createContext("/posts/1", exchange -> {
+            String method = exchange.getRequestMethod();
+            String response;
+
+            if ("GET".equals(method)) {
+                response = "{ \"id\": 1, \"title\": \"Lean testing\", \"body\": \"Regression testing\" }";
+                exchange.sendResponseHeaders(200, response.length());
+            } else if ("PUT".equals(method)) {
+                response = "{ \"id\": 1, \"title\": \"Updated title\", \"body\": \"Updated regression test\" }";
+                exchange.sendResponseHeaders(200, response.length());
+            } else if ("DELETE".equals(method)) {
+                response = "{ \"id\": 1, \"isDeleted\": true }";
+                exchange.sendResponseHeaders(200, response.length());
+            } else {
+                response = "{ \"error\": \"Unsupported method\" }";
+                exchange.sendResponseHeaders(405, response.length());
+            }
+
+            OutputStream os = exchange.getResponseBody();
+            os.write(response.getBytes());
+            os.close();
+        });
+
+        server.createContext("/posts/999999", exchange -> {
+            String response = "{ \"error\": \"Post not found\" }";
+            exchange.sendResponseHeaders(404, response.length());
+            OutputStream os = exchange.getResponseBody();
+            os.write(response.getBytes());
+            os.close();
+        });
+
+        server.createContext("/comments/post/1", exchange -> {
+            String response = "{ \"comments\": [{ \"id\": 1, \"postId\": 1, \"body\": \"Useful test\" }] }";
+            exchange.sendResponseHeaders(200, response.length());
+            OutputStream os = exchange.getResponseBody();
+            os.write(response.getBytes());
+            os.close();
+        });
+
+        server.createContext("/posts/add", exchange -> {
+            String response = "{ \"id\": 101, \"title\": \"Lean testing\", \"body\": \"Automated regression test\", \"userId\": 1 }";
+            exchange.sendResponseHeaders(201, response.length());
+            OutputStream os = exchange.getResponseBody();
+            os.write(response.getBytes());
+            os.close();
+        });
+
+        server.createContext("/users", exchange -> {
+            String response = "{ \"users\": [{ \"id\": 1, \"email\": \"test@example.com\" }] }";
+            exchange.sendResponseHeaders(200, response.length());
+            OutputStream os = exchange.getResponseBody();
+            os.write(response.getBytes());
+            os.close();
+        });
+
+        server.start();
+
+        RestAssured.baseURI = "http://localhost:8085";
+    }
+
+    @AfterClass
+    public void tearDown() {
+        if (server != null) {
+            server.stop(0);
+        }
     }
 
     @Test(priority = 1, groups = {"smoke", "critical", "regression"})
@@ -33,7 +116,7 @@ public class ReqresRegressionTests {
                 .then()
                 .statusCode(200)
                 .body("id", equalTo(1))
-                .body("title", notNullValue());
+                .body("title", equalTo("Lean testing"));
     }
 
     @Test(priority = 3, groups = {"critical", "regression"})
@@ -43,7 +126,8 @@ public class ReqresRegressionTests {
                 .get("/comments/post/1")
                 .then()
                 .statusCode(200)
-                .body("comments.size()", greaterThan(0));
+                .body("comments.size()", greaterThan(0))
+                .body("comments[0].postId", equalTo(1));
     }
 
     @Test(priority = 4, groups = {"regression"})
