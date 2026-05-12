@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="ReqRes API Regression Suite">
+
+    <test name="Prioritised API Regression Tests">
+
+        <classes>
+            <class name="tests.ReqresRegressionTests"/>
+        </classes>
+
+    </test>
+
+</suite>

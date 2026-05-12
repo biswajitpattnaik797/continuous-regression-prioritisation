@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
+  <reporter-output>
+  </reporter-output>
+  <suite name="ReqRes API Regression Suite" duration-ms="3705" started-at="2026-05-12T14:14:12 CEST" finished-at="2026-05-12T14:14:15 CEST">
+    <groups>
+      <group name="critical">
+        <method signature="ReqresRegressionTests.createPost()[pri:5, instance:tests.ReqresRegressionTests@3bfdc050]" name="createPost" class="tests.ReqresRegressionTests"/>
+        <method signature="ReqresRegressionTests.getCommentsForPost()[pri:3, instance:tests.ReqresRegressionTests@3bfdc050]" name="getCommentsForPost" class="tests.ReqresRegressionTests"/>
+        <method signature="ReqresRegressionTests.getPostsList()[pri:1, instance:tests.ReqresRegressionTests@3bfdc050]" name="getPostsList" class="tests.ReqresRegressionTests"/>
+        <method signature="ReqresRegressionTests.getSinglePost()[pri:2, instance:tests.ReqresRegressionTests@3bfdc050]" name="getSinglePost" class="tests.ReqresRegressionTests"/>
+      </group> <!-- critical -->
+      <group name="regression">
+        <method signature="ReqresRegressionTests.createPost()[pri:5, instance:tests.ReqresRegressionTests@3bfdc050]" name="createPost" class="tests.ReqresRegressionTests"/>
+        <method signature="ReqresRegressionTests.deletePost()[pri:7, instance:tests.ReqresRegressionTests@3bfdc050]" name="deletePost" class="tests.ReqresRegressionTests"/>
+        <method signature="ReqresRegressionTests.getCommentsForPost()[pri:3, instance:tests.ReqresRegressionTests@3bfdc050]" name="getCommentsForPost" class="tests.ReqresRegressionTests"/>
+        <method signature="ReqresRegressionTests.getPostsList()[pri:1, instance:tests.ReqresRegressionTests@3bfdc050]" name="getPostsList" class="tests.ReqresRegressionTests"/>
+        <method signature="ReqresRegressionTests.getSinglePost()[pri:2, instance:tests.ReqresRegressionTests@3bfdc050]" name="getSinglePost" class="tests.ReqresRegressionTests"/>
+        <method signature="ReqresRegressionTests.getUsersList()[pri:8, instance:tests.ReqresRegressionTests@3bfdc050]" name="getUsersList" class="tests.ReqresRegressionTests"/>
+        <method signature="ReqresRegressionTests.postNotFound()[pri:4, instance:tests.ReqresRegressionTests@3bfdc050]" name="postNotFound" class="tests.ReqresRegressionTests"/>
+        <method signature="ReqresRegressionTests.updatePost()[pri:6, instance:tests.ReqresRegressionTests@3bfdc050]" name="updatePost" class="tests.ReqresRegressionTests"/>
+      </group> <!-- regression -->
+      <group name="smoke">
+        <method signature="ReqresRegressionTests.getPostsList()[pri:1, instance:tests.ReqresRegressionTests@3bfdc050]" name="getPostsList" class="tests.ReqresRegressionTests"/>
+        <method signature="ReqresRegressionTests.getSinglePost()[pri:2, instance:tests.ReqresRegressionTests@3bfdc050]" name="getSinglePost" class="tests.ReqresRegressionTests"/>
+      </group> <!-- smoke -->
+    </groups>
+    <test name="Prioritised API Regression Tests" duration-ms="3705" started-at="2026-05-12T14:14:12 CEST" finished-at="2026-05-12T14:14:15 CEST">
+      <class name="tests.ReqresRegressionTests">
+        <test-method status="PASS" signature="setup()[pri:0, instance:tests.ReqresRegressionTests@3bfdc050]" name="setup" is-config="true" duration-ms="364" started-at="2026-05-12T14:14:12 CEST" finished-at="2026-05-12T14:14:12 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="getPostsList()[pri:1, instance:tests.ReqresRegressionTests@3bfdc050]" name="getPostsList" duration-ms="1792" started-at="2026-05-12T14:14:12 CEST" finished-at="2026-05-12T14:14:14 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getPostsList -->
+        <test-method status="PASS" signature="getSinglePost()[pri:2, instance:tests.ReqresRegressionTests@3bfdc050]" name="getSinglePost" duration-ms="170" started-at="2026-05-12T14:14:14 CEST" finished-at="2026-05-12T14:14:14 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getSinglePost -->
+        <test-method status="PASS" signature="getCommentsForPost()[pri:3, instance:tests.ReqresRegressionTests@3bfdc050]" name="getCommentsForPost" duration-ms="162" started-at="2026-05-12T14:14:14 CEST" finished-at="2026-05-12T14:14:14 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getCommentsForPost -->
+        <test-method status="PASS" signature="postNotFound()[pri:4, instance:tests.ReqresRegressionTests@3bfdc050]" name="postNotFound" duration-ms="46" started-at="2026-05-12T14:14:14 CEST" finished-at="2026-05-12T14:14:14 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postNotFound -->
+        <test-method status="PASS" signature="createPost()[pri:5, instance:tests.ReqresRegressionTests@3bfdc050]" name="createPost" duration-ms="292" started-at="2026-05-12T14:14:14 CEST" finished-at="2026-05-12T14:14:15 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createPost -->
+        <test-method status="PASS" signature="updatePost()[pri:6, instance:tests.ReqresRegressionTests@3bfdc050]" name="updatePost" duration-ms="524" started-at="2026-05-12T14:14:15 CEST" finished-at="2026-05-12T14:14:15 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updatePost -->
+        <test-method status="PASS" signature="deletePost()[pri:7, instance:tests.ReqresRegressionTests@3bfdc050]" name="deletePost" duration-ms="167" started-at="2026-05-12T14:14:15 CEST" finished-at="2026-05-12T14:14:15 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deletePost -->
+        <test-method status="PASS" signature="getUsersList()[pri:8, instance:tests.ReqresRegressionTests@3bfdc050]" name="getUsersList" duration-ms="152" started-at="2026-05-12T14:14:15 CEST" finished-at="2026-05-12T14:14:15 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUsersList -->
+      </class> <!-- tests.ReqresRegressionTests -->
+    </test> <!-- Prioritised API Regression Tests -->
+  </suite> <!-- ReqRes API Regression Suite -->
+</testng-results>

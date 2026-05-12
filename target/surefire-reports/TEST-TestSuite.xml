@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="4.103" tests="8" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="gopherProxySet" value="false"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/bpawrp/Projects/continuous-regression-prioritisation/target/test-classes:/Users/bpawrp/Projects/continuous-regression-prioritisation/target/classes:/Users/bpawrp/.m2/repository/io/rest-assured/rest-assured/4.5.1/rest-assured-4.5.1.jar:/Users/bpawrp/.m2/repository/org/codehaus/groovy/groovy/3.0.9/groovy-3.0.9.jar:/Users/bpawrp/.m2/repository/org/codehaus/groovy/groovy-xml/3.0.9/groovy-xml-3.0.9.jar:/Users/bpawrp/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/bpawrp/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/Users/bpawrp/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/bpawrp/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/bpawrp/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/Users/bpawrp/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/bpawrp/.m2/repository/io/rest-assured/json-path/4.5.1/json-path-4.5.1.jar:/Users/bpawrp/.m2/repository/org/codehaus/groovy/groovy-json/3.0.9/groovy-json-3.0.9.jar:/Users/bpawrp/.m2/repository/io/rest-assured/rest-assured-common/4.5.1/rest-assured-common-4.5.1.jar:/Users/bpawrp/.m2/repository/io/rest-assured/xml-path/4.5.1/xml-path-4.5.1.jar:/Users/bpawrp/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/Users/bpawrp/.m2/repository/org/testng/testng/7.4.0/testng-7.4.0.jar:/Users/bpawrp/.m2/repository/com/beust/jcommander/1.78/jcommander-1.78.jar:/Users/bpawrp/.m2/repository/org/webjars/jquery/3.5.1/jquery-3.5.1.jar:/Users/bpawrp/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:"/>
+    <property name="java.vm.vendor" value="Temurin"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/Users/bpawrp/java8/Contents/Home/jre/lib"/>
+    <property name="sun.java.command" value="/Users/bpawrp/Projects/continuous-regression-prioritisation/target/surefire/surefirebooter3752491202283680142.jar /Users/bpawrp/Projects/continuous-regression-prioritisation/target/surefire 2026-05-12T14-14-10_942-jvmRun1 surefire869501727121732007tmp surefire_01716210941393661546tmp"/>
+    <property name="surefire.test.class.path" value="/Users/bpawrp/Projects/continuous-regression-prioritisation/target/test-classes:/Users/bpawrp/Projects/continuous-regression-prioritisation/target/classes:/Users/bpawrp/.m2/repository/io/rest-assured/rest-assured/4.5.1/rest-assured-4.5.1.jar:/Users/bpawrp/.m2/repository/org/codehaus/groovy/groovy/3.0.9/groovy-3.0.9.jar:/Users/bpawrp/.m2/repository/org/codehaus/groovy/groovy-xml/3.0.9/groovy-xml-3.0.9.jar:/Users/bpawrp/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/bpawrp/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/Users/bpawrp/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/bpawrp/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/bpawrp/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/Users/bpawrp/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/bpawrp/.m2/repository/io/rest-assured/json-path/4.5.1/json-path-4.5.1.jar:/Users/bpawrp/.m2/repository/org/codehaus/groovy/groovy-json/3.0.9/groovy-json-3.0.9.jar:/Users/bpawrp/.m2/repository/io/rest-assured/rest-assured-common/4.5.1/rest-assured-common-4.5.1.jar:/Users/bpawrp/.m2/repository/io/rest-assured/xml-path/4.5.1/xml-path-4.5.1.jar:/Users/bpawrp/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/Users/bpawrp/.m2/repository/org/testng/testng/7.4.0/testng-7.4.0.jar:/Users/bpawrp/.m2/repository/com/beust/jcommander/1.78/jcommander-1.78.jar:/Users/bpawrp/.m2/repository/org/webjars/jquery/3.5.1/jquery-3.5.1.jar:/Users/bpawrp/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/bpawrp"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="/Users/bpawrp/java8/Contents/Home/jre"/>
+    <property name="basedir" value="/Users/bpawrp/Projects/continuous-regression-prioritisation"/>
+    <property name="file.separator" value="/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/Users/bpawrp/Projects/continuous-regression-prioritisation/target/surefire/surefirebooter3752491202283680142.jar"/>
+    <property name="sun.boot.class.path" value="/Users/bpawrp/java8/Contents/Home/jre/lib/resources.jar:/Users/bpawrp/java8/Contents/Home/jre/lib/rt.jar:/Users/bpawrp/java8/Contents/Home/jre/lib/sunrsasign.jar:/Users/bpawrp/java8/Contents/Home/jre/lib/jsse.jar:/Users/bpawrp/java8/Contents/Home/jre/lib/jce.jar:/Users/bpawrp/java8/Contents/Home/jre/lib/charsets.jar:/Users/bpawrp/java8/Contents/Home/jre/lib/jfr.jar:/Users/bpawrp/java8/Contents/Home/jre/classes"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_482-b08"/>
+    <property name="user.name" value="bpawrp"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="15.6.1"/>
+    <property name="java.endorsed.dirs" value="/Users/bpawrp/java8/Contents/Home/jre/lib/endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/bpawrp/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/42/v85b04_n6db3_vp125plrk4h0000gp/T/"/>
+    <property name="java.version" value="1.8.0_482"/>
+    <property name="user.dir" value="/Users/bpawrp/Projects/continuous-regression-prioritisation"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/Users/bpawrp/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Temurin"/>
+    <property name="java.vm.version" value="25.482-b08"/>
+    <property name="java.specification.maintenance.version" value="6"/>
+    <property name="java.ext.dirs" value="/Users/bpawrp/Library/Java/Extensions:/Users/bpawrp/java8/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="getPostsList" classname="tests.ReqresRegressionTests" time="1.799"/>
+  <testcase name="getSinglePost" classname="tests.ReqresRegressionTests" time="0.167"/>
+  <testcase name="getCommentsForPost" classname="tests.ReqresRegressionTests" time="0.161"/>
+  <testcase name="postNotFound" classname="tests.ReqresRegressionTests" time="0.046"/>
+  <testcase name="createPost" classname="tests.ReqresRegressionTests" time="0.292"/>
+  <testcase name="updatePost" classname="tests.ReqresRegressionTests" time="0.524"/>
+  <testcase name="deletePost" classname="tests.ReqresRegressionTests" time="0.166"/>
+  <testcase name="getUsersList" classname="tests.ReqresRegressionTests" time="0.152"/>
+</testsuite>
