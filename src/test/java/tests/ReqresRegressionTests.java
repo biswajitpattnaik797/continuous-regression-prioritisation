@@ -12,7 +12,7 @@ public class ReqresRegressionTests {
     @BeforeClass
     public void setup() {
         RestAssured.useRelaxedHTTPSValidation();
-        RestAssured.baseURI = "https://jsonplaceholder.typicode.com";
+        RestAssured.baseURI = "https://dummyjson.com";
     }
 
     @Test(priority = 1, groups = {"smoke", "critical", "regression"})
@@ -22,7 +22,7 @@ public class ReqresRegressionTests {
                 .get("/posts")
                 .then()
                 .statusCode(200)
-                .body("size()", greaterThan(0));
+                .body("posts.size()", greaterThan(0));
     }
 
     @Test(priority = 2, groups = {"smoke", "critical", "regression"})
@@ -33,7 +33,6 @@ public class ReqresRegressionTests {
                 .then()
                 .statusCode(200)
                 .body("id", equalTo(1))
-                .body("userId", notNullValue())
                 .body("title", notNullValue());
     }
 
@@ -41,11 +40,10 @@ public class ReqresRegressionTests {
     public void getCommentsForPost() {
         given()
                 .when()
-                .get("/posts/1/comments")
+                .get("/comments/post/1")
                 .then()
                 .statusCode(200)
-                .body("size()", greaterThan(0))
-                .body("[0].postId", equalTo(1));
+                .body("comments.size()", greaterThan(0));
     }
 
     @Test(priority = 4, groups = {"regression"})
@@ -63,7 +61,7 @@ public class ReqresRegressionTests {
                 .header("Content-Type", "application/json")
                 .body("{ \"title\": \"Lean testing\", \"body\": \"Automated regression test\", \"userId\": 1 }")
                 .when()
-                .post("/posts")
+                .post("/posts/add")
                 .then()
                 .statusCode(201)
                 .body("title", equalTo("Lean testing"))
@@ -76,7 +74,7 @@ public class ReqresRegressionTests {
     public void updatePost() {
         given()
                 .header("Content-Type", "application/json")
-                .body("{ \"id\": 1, \"title\": \"Updated title\", \"body\": \"Updated regression test\", \"userId\": 1 }")
+                .body("{ \"title\": \"Updated title\", \"body\": \"Updated regression test\" }")
                 .when()
                 .put("/posts/1")
                 .then()
@@ -91,7 +89,8 @@ public class ReqresRegressionTests {
                 .when()
                 .delete("/posts/1")
                 .then()
-                .statusCode(200);
+                .statusCode(200)
+                .body("isDeleted", equalTo(true));
     }
 
     @Test(priority = 8, groups = {"regression"})
@@ -101,7 +100,7 @@ public class ReqresRegressionTests {
                 .get("/users")
                 .then()
                 .statusCode(200)
-                .body("size()", greaterThan(0))
-                .body("[0].email", containsString("@"));
+                .body("users.size()", greaterThan(0))
+                .body("users[0].email", containsString("@"));
     }
 }
