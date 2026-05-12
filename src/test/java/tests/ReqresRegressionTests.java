@@ -18,7 +18,7 @@ public class ReqresRegressionTests {
 
     private HttpServer server;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void setup() throws Exception {
         RestAssured.defaultParser = Parser.JSON;
         server = HttpServer.create(new InetSocketAddress(8085), 0);
@@ -91,7 +91,7 @@ public class ReqresRegressionTests {
         RestAssured.baseURI = "http://localhost:8085";
     }
 
-    @AfterClass
+    @AfterClass(alwaysRun = true)
     public void tearDown() {
         if (server != null) {
             server.stop(0);
