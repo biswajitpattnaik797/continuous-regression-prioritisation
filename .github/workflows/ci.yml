@@ -1,0 +1,32 @@
+name: API Regression Prioritisation CI
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *'
+
+jobs:
+  api-regression-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java 8
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '8'
+
+      - name: Run smoke tests
+        run: mvn test -Dgroups=smoke
+
+      - name: Run critical tests
+        run: mvn test -Dgroups=critical
+
+      - name: Run regression tests
+        run: mvn test -Dgroups=regression
